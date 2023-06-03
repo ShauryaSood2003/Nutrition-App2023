@@ -41,11 +41,16 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+
 const User = mongoose.model('user', UserSchema);
 
 app.get('/', (req, res) => {
   res.render('main');
 });
+
+app.get("/aboutUs",(req,res)=>{
+  res.render("aboutUs");
+})
 
 app.get("/webPage",(req,res)=>{
   res.render("webPage",{calories:"",totalCO2Emissions:"",co2EmissionsClass:"",healthLabels:[]});
