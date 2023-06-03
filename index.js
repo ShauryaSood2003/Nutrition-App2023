@@ -41,44 +41,62 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-
 const User = mongoose.model('user', UserSchema);
 
 app.get('/', (req, res) => {
   res.render('main');
 });
 
-app.get("/aboutUs",(req,res)=>{
-  res.render("aboutUs");
-})
+app.get('/aboutUs', (req, res) => {
+  res.render('aboutUs');
+});
 
-app.get("/webPage",(req,res)=>{
-  res.render("webPage",{calories:"",totalCO2Emissions:"",co2EmissionsClass:"",healthLabels:[]});
+app.get('/webPage', (req, res) => {
+  res.render('webPage', {
+    calories: '',
+    Fat: '',
+    iron: '',
+    sodium: '',
+    potassium: '',
+    protein: '',
+    calcium: '',
+    isCardVisible: false
+  });
 });
 
 app.post('/webPage', (req, res) => {
-  
-const foodName = req.body.foodName; 
-const appId =process.env.APPID; 
-const apiKey = process.env.APPKEY; 
+  const foodName = req.body.foodName;
+  const appId = process.env.APPID;
+  const apiKey = process.env.APPKEY;
 
-const url = `https://api.edamam.com/api/nutrition-data?app_id=${appId}&app_key=${apiKey}&ingr=${foodName}`;
+  const url = `https://api.edamam.com/api/nutrition-data?app_id=${appId}&app_key=${apiKey}&ingr=${foodName}`;
 
-axios.get(url)
-  .then(response => {
-    
-    res.render("webPage",
-    {
-      calories:response.data.calories,
-      totalCO2Emissions:response.data.totalCO2Emissions,
-      co2EmissionsClass:response.data.co2EmissionsClass,
-      healthLabels:response.data.healthLabels
+  axios
+    .get(url)
+    .then(response => {
+      const { calories, totalNutrients } = response.data;
+
+      const fat = totalNutrients.FAT?.quantity || '';
+      const iron = totalNutrients.FE?.quantity || '';
+      const sodium = totalNutrients.NA?.quantity || '';
+      const potassium = totalNutrients.K?.quantity || '';
+      const protein = totalNutrients.PROCNT?.quantity || '';
+      const calcium = totalNutrients.CA?.quantity || '';
+
+      res.render('webPage', {
+        calories,
+        Fat: fat,
+        iron,
+        sodium,
+        potassium,
+        protein,
+        calcium,
+        isCardVisible: true
+      });
+    })
+    .catch(error => {
+      console.log('Error:', error);
     });
-  })
-  .catch(error => {
-    console.log('Error:', error);
-  });
-
 });
 
 app.get('/login', (req, res) => {
@@ -86,7 +104,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  User.findOne({ email: req.body.email }).then((found) => {
+  User.findOne({ email: req.body.email }).then(found => {
     if (found && found.password === req.body.password) {
       res.redirect('/webPage');
     } else {
@@ -100,7 +118,7 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  User.findOne({ email: req.body.email }).then((found) => {
+  User.findOne({ email: req.body.email }).then(found => {
     if (found) {
       res.redirect('/login');
     } else {

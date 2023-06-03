@@ -1,17 +1,30 @@
 <%- include("partials/header"); -%>
+  
 
-<form action="/webpage" method="post">
-    <input type="text" name="foodName" placeholder="enter the name of food item">
-    <button type="submit">Submit</button>
-</form>
+    <div class="Webcontainer">
+       
+        <div class="search-container">
 
-<p> <%= calories %> </p>
+            <form action="/webpage" method="post">
+                <input type="text" name="foodName" placeholder="Example 1 cup rice">
+                <button type="submit ">Submit </button>
+            </form>
+        </div>
 
-<p> <%= totalCO2Emissions %> </p>
-
-<p> <%= co2EmissionsClass %> </p>
-
-<p> <%= healthLabels %> </p>
-
+    
+        <div id="food-info"></div>
+        <div class="Webcard card--large" <% if (isCardVisible) { %>style="display: block;"<% } else { %>style="display: none;"<% } %>>
+            <h2 class="typewriter-effect">Food Item</h2>
+            <h3>Calories: <%= calories %></h3>
+            <h3>Fat: <%= Fat %>g</h3>
+            <p>Protein: <%= protein %>g</p>
+            <p>Calcium: <%= calcium %>mg</p>
+            <p>Iron: <%= iron %>mg</p>
+            <p>Potassium: <%= potassium %>mg</p>
+            <p>Sodium: <%= sodium %> mg</p>
+            
+          </div>
+    </div>
 </body>
+
 </html>

@@ -149,3 +149,152 @@
  }
 
  /* Aboutus end page */
+
+ 
+ .Webcontainer {
+  max-width: 1100px;
+  width: 100vw;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://img.freepik.com/free-photo/copy-space-italian-food-ingredients_23-2148551732.jpg ");
+  background-size: cover; 
+  box-sizing: border-box;
+  border-radius: 20px;
+  
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  display:flex;
+  align-items: center;
+}
+
+.search-container input[type=text] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding: 15px;
+  width: 400px; 
+  font-size: 18px; 
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #af4c89;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+    padding: 15px 30px;
+  font-size: 18px;
+ 
+}
+
+.search-container button:hover {
+  background-color: #f3399f;
+  background-color: #d82a6a;
+  animation: pulse 1s ;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.Webcard {
+  background-color: #ffcbc4;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px; 
+  align-self: center;
+  padding: 30px; 
+  font-size: 18px;
+  
+}
+
+.Webcard h2 {
+  margin-top: 0;
+  color: #fa1d81;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 10px; 
+
+  
+}
+.WebVisible{
+  visibility: visible;
+}
+.Webcard p {
+
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+  font-weight: bold;
+  
+}
+
+.veg {
+  
+  width: 100px; 
+  height: auto; 
+  margin-right: 10px;
+  animation: floatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.typewriter-effect {
+  width: 9ch;
+  animation: typing 1s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
