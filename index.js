@@ -59,8 +59,8 @@ app.get("/webPage",(req,res)=>{
 app.post('/webPage', (req, res) => {
   
 const foodName = req.body.foodName; 
-const appId = 'c039a00c'; 
-const apiKey = '278504b256939d184954f198de05c9c8'; 
+const appId =process.env.APPID; 
+const apiKey = process.env.APPKEY; 
 
 const url = `https://api.edamam.com/api/nutrition-data?app_id=${appId}&app_key=${apiKey}&ingr=${foodName}`;
 
