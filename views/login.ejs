@@ -1,0 +1,65 @@
+<%- include('partials/header'); -%>
+    
+    <section class="vh-90" style="background-color: #9A616D;background-image: url('https://www.transparenttextures.com/patterns/checkered-light-emboss.png');">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem;background-color: #F8EEE2;">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img src="https://blog.myfitnesspal.com/wp-content/uploads/2017/12/Essential-Guide-to-Healthy-Eating-2-1200x900.png"
+                      alt="food-img" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                      <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/04/healthy-dinner-plate.jpg"
+                      alt="food-img" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+      
+                      <form method="post" action="/login">
+      
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                          <!-- <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> -->
+                          <span class="h1 fw-bold mb-0">Nutrition-App</span>
+                        </div>
+      
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;color:#fa9332;">Sign into your account</h5>
+      
+                        <div class="form-outline mb-4">
+                          <input type="email" id="form2Example17" name="email" class="form-control form-control-lg" placeholder="Email address"/>
+                       
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input type="password" id="form2Example27" name="password" style="margin-bottom: 8%;" class="form-control form-control-lg" placeholder="Password" />
+                        
+                        </div>
+
+                        <div style="height: 2px;width:100%;background-color: #3f3535;margin-bottom: 8%;"></div>
+      
+                        <div class="loginButtonContainer">
+                        <div class="pt-1 mb-4">
+                          <button class="btn btn-lg btn-block loginButton" type="submit">Sign In</button>
+                        </div>
+                        <h5 style="margin-left: 50%;margin-bottom: 18px;">or</h5>
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-lg btn-block loginButton" type="button" href="/auth/google">SignIn with Google <i class="fa-brands fa-google" style="color: #393f81;"></i></button>
+                          </div>
+
+                        </div>
+
+                        <p class="mb-1 mt-2 pb-lg-2 loginRegisterHover" style="color: #393f81;margin-top: 5%;">Don't have an account? <a href="register" 
+                            style="color:#0dbd2a;">Register here</a></p>
+                  
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </body>
+</html>
